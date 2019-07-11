@@ -1,5 +1,6 @@
 ﻿Public Class Form1
-    Dim fd1, fd2, fd3, fd4, fd5, cost, total As Double
+    Dim fd1, fd2, fd3, fd4, fd5, itmcount, cost, total As Double
+    Dim itm As Object
 
     Private Sub Cbmenu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmenu.SelectedIndexChanged
         If cbmenu.SelectedIndex = 0 Then
@@ -80,6 +81,19 @@
         TextBox5.Clear()
     End Sub
 
+    Private Sub Btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
+        For itm = 0 To lbfood.Items.Count - 1
+            Form2.lbfood.Items.Add(lbfood.Items(itm))
+            Form2.lbcost.Items.Add(lbcost.Items(itm))
+        Next
+        Form2.lbltotalitems.Text = itmcount
+        Form2.lbltotalbill.Text = Val(txttotal.Text)
+        Form2.lbltax.Text = Val(txttotal.Text) * 0.12
+        Form2.lblbill.Text = Form2.lbltotalbill.Text - Form2.lbltax.Text
+        Form2.Show()
+        Me.Hide()
+    End Sub
+
     Private Sub Btnvoid_Click(sender As Object, e As EventArgs) Handles btnvoid.Click
         TextBox1.Clear()
         TextBox2.Clear()
@@ -90,9 +104,11 @@
         lbfood.Items.Clear()
         txttotal.Clear()
         total = 0
+        itmcount = 0
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        itmcount = itmcount + Val(TextBox1.Text)
         lbfood.Items.Add(Val(TextBox1.Text) & " " & Button1.Text)
         cost = Val(TextBox1.Text) * fd1
         lbcost.Items.Add(cost)
@@ -101,6 +117,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        itmcount = itmcount + Val(TextBox2.Text)
         lbfood.Items.Add(Val(TextBox2.Text) & " " & Button2.Text)
         cost = Val(TextBox2.Text) * fd2
         lbcost.Items.Add(cost)
@@ -109,6 +126,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        itmcount = itmcount + Val(TextBox3.Text)
         lbfood.Items.Add(Val(TextBox3.Text) & " " & Button3.Text)
         cost = Val(TextBox3.Text) * fd3
         lbcost.Items.Add(cost)
@@ -117,6 +135,7 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        itmcount = itmcount + Val(TextBox4.Text)
         lbfood.Items.Add(Val(TextBox4.Text) & " " & Button4.Text)
         cost = Val(TextBox4.Text) * fd4
         lbcost.Items.Add(cost)
@@ -125,6 +144,7 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        itmcount = itmcount + Val(TextBox5.Text)
         lbfood.Items.Add(Val(TextBox5.Text) & " " & Button5.Text)
         cost = Val(TextBox5.Text) * fd5
         lbcost.Items.Add(cost)

@@ -20,3 +20,4 @@ C:\Users\fjosh\OneDrive\Documents\Visual Studio 2019\JoshFrancisco_Project1\Josh
 C:\Users\fjosh\OneDrive\Documents\Visual Studio 2019\JoshFrancisco_Project1\JoshFrancisco_Project1\obj\Debug\JoshFrancisco_Project1.exe
 C:\Users\fjosh\OneDrive\Documents\Visual Studio 2019\JoshFrancisco_Project1\JoshFrancisco_Project1\obj\Debug\JoshFrancisco_Project1.xml
 C:\Users\fjosh\OneDrive\Documents\Visual Studio 2019\JoshFrancisco_Project1\JoshFrancisco_Project1\obj\Debug\JoshFrancisco_Project1.pdb
+C:\Users\fjosh\OneDrive\Documents\Visual Studio 2019\JoshFrancisco_Project1\JoshFrancisco_Project1\obj\Debug\JoshFrancisco_Project1.Form2.resources
